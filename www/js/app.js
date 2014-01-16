@@ -5,6 +5,8 @@
     var sidebar = 0;
     $page.hammer()
         .on('swiperight' , function(e){
+            e.gesture.preventDefault();
+            e.gesture.stopPropagation();
             if(sidebar){
                 return true;    
             }
@@ -12,6 +14,8 @@
             sidebar = 1;
         })
         .on('swipeleft' , function(e){
+            e.gesture.preventDefault();
+            e.gesture.stopPropagation();
             if(!sidebar){
                 return true;
             }
@@ -19,19 +23,26 @@
             sidebar = 0;
         })
         .on('drag' , function(e){
-            if(e.gesture.deltaX > 550  || e.gesture.deltaX < -550){
+            e.gesture.preventDefault();
+            e.gesture.stopPropagation();
+            if(e.gesture.deltaX > 550){
+                 console.log("0");
                 return false;
             }
             if(e.gesture.direction == 'right' && !sidebar){
+                 console.log("1");
                 $page.animate({translateX: e.gesture.deltaX +"px"}, 0);
             }
             if(e.gesture.direction == 'left' && sidebar){
+                 console.log("2");
                 $page.animate({translateX: (550 + e.gesture.deltaX) +"px"}, 0);
             }
         })
         .on('dragend' , function(e){
+            e.gesture.preventDefault();
+            e.gesture.stopPropagation();
             if(e.gesture.direction == 'right' && !sidebar){
-                if(e.gesture.deltaX >275){
+                if(e.gesture.deltaX > 275){
                       $page.animate({translateX: "550px"}, 200);
                       sidebar = 1;
                 } else {
@@ -41,9 +52,12 @@
             if(e.gesture.direction == 'left' && sidebar){
                 if(e.gesture.deltaX <-275){
                     $page.animate({translateX: "0px"}, 200);
+                    console.log("1");
                     sidebar = 0;
                 } else{
-                     $page.animate({translateX:"550px"}, 200);
+                    console.log("2");
+                    $page.animate({translateX:"550px"}, 200);
+                    sidebar = 1;
                 }
             }
         })

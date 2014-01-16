@@ -2,21 +2,27 @@
 Page d'accueil
 ***********************************/
 
+body{
+    /*overflow: hidden;    */
+    height:100%;
+    width:100%;
+    margin:0;
+    padding: 0;
+    background-attachment:fixed;
+}
+
 .page{
-    -webkit-box-sizing: border-box;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: #FDFDFD;
     z-index: 3;
-
 }
 
 .sidebar{
-    position: absolute;
+    position: fixed;
     top: 0; bottom: 0; left: 0;
     width: 550px;
     background-color: #23262b;
-/*    padding: 0 30px;*/
     color:#FFF;
     z-index: 2;
 }
@@ -33,4 +39,12 @@ Page d'accueil
     display:block;
     height:103px,line-height: 103px;
     color:#FFF;
+    text-decoration:none;
+    font-weight: bold;
+    border-top:2px solid #3a3e46;
+}
+
+h1{
+    margin:0;
+    padding:0;
 }
