@@ -3,6 +3,14 @@
     var $page = $('#page');
     var $nav = $('#nav');
     var sidebar = 0;
+    var $item1 = $('#item1');
+
+
+    $item1.hammer()
+        .on('click' , function(e){
+            window.open('pdf/test.pdf', '_blank', 'location=yes');
+        });
+
     $page.hammer()
         .on('swiperight' , function(e){
             e.gesture.preventDefault();
