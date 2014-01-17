@@ -8,7 +8,7 @@
 
     $item1.hammer()
         .on('click' , function(e){
-            window.open('pdf/test.pdf', '_system', 'location=yes');
+            window.open('pdf/test.pdf', '_blank', 'location=yes');
         });
 
     $page.hammer()
