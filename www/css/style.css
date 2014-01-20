@@ -38,11 +38,12 @@ body{
 
 .sidebar-item{
     display:block;
-    height:103px,line-height: 103px;
+    height:500px,line-height: 103px;
     color:#FFF;
     text-decoration:none;
     font-weight: bold;
     border-top:2px solid #3a3e46;
+    font-size: 30px;
 }
 
 h1{

@@ -6,6 +6,22 @@
     var $item1 = $('#item1');
     var $item2 = $('#item1');
 
+
+
+    // prep some variables
+      var startDate = new Date("September 24, 2013 13:00:00");
+      var endDate = new Date("September 24, 2013 14:30:00");
+      var title = "My nice event";
+      var location = "Home";
+      var notes = "Some notes about this event.";
+      var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+      var error = function(message) { alert("Error: " + message); };
+
+  
+
+   
+
+
     $item1.hammer()
         .on('click' , function(e){
             console.log('click item 1');
@@ -20,8 +36,7 @@
 
     $item2.hammer()
         .on('click' , function(e){
-            console.log('click item 2');
-            navigator.camera.getPicture();
+             window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
         });       
 
     $page.hammer()
