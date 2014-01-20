@@ -4,7 +4,7 @@
     var $nav = $('#nav');
     var sidebar = 0;
     var $item1 = $('#item1');
-     var $item2 = $('#item1');
+    var $item2 = $('#item1');
 
     $item1.hammer()
         .on('click' , function(e){
@@ -21,7 +21,7 @@
     $item2.hammer()
         .on('click' , function(e){
             console.log('click item 2');
-            navigator.camera.getPicture():
+            navigator.camera.getPicture();
         });       
 
     $page.hammer()
