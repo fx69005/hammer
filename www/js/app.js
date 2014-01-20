@@ -8,7 +8,9 @@
 
     $item1.hammer()
         .on('click' , function(e){
-            window.open('pdf/test.pdf', '_blank', 'location=yes');
+            var ref =  window.open('pdf/test.pdf', '_blank', 'location=yes');
+            ref.addEventListener('loadstart', function() { alert(event.url); });
+           
         });
 
     $page.hammer()
