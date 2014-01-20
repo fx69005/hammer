@@ -4,7 +4,7 @@
     var $nav = $('#nav');
     var sidebar = 0;
     var $item1 = $('#item1');
-    var $item2 = $('#item1');
+    var $item2 = $('#item2');
 
 
 
