@@ -9,9 +9,11 @@
     $item1.hammer()
         .on('click' , function(e){
             console.log('click item');
-            var ref =  window.open('pdf/test.pdf', '_blank', 'location=yes');
-            ref.addEventListener('loadstart', function() { alert(event.url); });
-           
+            var ref =  window.open('pdf/test.pdf', '_system', 'location=yes');
+            ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+            ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+            ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+            ref.addEventListener('exit', function(event) { alert(event.type); });  
         });
 
     $page.hammer()
