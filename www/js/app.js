@@ -8,6 +8,7 @@
 
     $item1.hammer()
         .on('click' , function(e){
+            console.log(click item);
             var ref =  window.open('pdf/test.pdf', '_blank', 'location=yes');
             ref.addEventListener('loadstart', function() { alert(event.url); });
            
@@ -15,8 +16,6 @@
 
     $page.hammer()
         .on('swiperight' , function(e){
-            e.gesture.preventDefault();
-            e.gesture.stopPropagation();
             if(sidebar){
                 return true;    
             }
@@ -24,8 +23,6 @@
             sidebar = 1;
         })
         .on('swipeleft' , function(e){
-            e.gesture.preventDefault();
-            e.gesture.stopPropagation();
             if(!sidebar){
                 return true;
             }
@@ -33,8 +30,6 @@
             sidebar = 0;
         })
         .on('drag' , function(e){
-            e.gesture.preventDefault();
-            e.gesture.stopPropagation();
             if(e.gesture.deltaX > 550){
                  console.log("0");
                 return false;
@@ -49,8 +44,6 @@
             }
         })
         .on('dragend' , function(e){
-            e.gesture.preventDefault();
-            e.gesture.stopPropagation();
             if(e.gesture.direction == 'right' && !sidebar){
                 if(e.gesture.deltaX > 275){
                       $page.animate({translateX: "550px"}, 200);
