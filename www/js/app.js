@@ -16,9 +16,6 @@
       var notes = "Some notes about this event.";
       var success = function(message) { alert("Success: " + JSON.stringify(message)); };
       var error = function(message) { alert("Error: " + message); };
-
-    $body{}
-
   
     $item1.hammer()
         .on('click' , function(e){
