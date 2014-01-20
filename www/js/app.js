@@ -21,7 +21,7 @@
     $item1.hammer()
         .on('click' , function(e){
             console.log('click item 1');
-            var ref =  window.open('pdf/test.pdf', '_blank', 'location=yes');
+            var ref =  window.open('../pdf/test.pdf', '_system', 'location=no');
         });
 
     $item2.hammer()
