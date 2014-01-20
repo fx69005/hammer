@@ -7,15 +7,6 @@
     var $item2 = $('#item2');
     var $body = $('body');
 
-
-    // prep some variables
-      var startDate = new Date("September 24, 2013 13:00:00");
-      var endDate = new Date("September 24, 2013 14:30:00");
-      var title = "My nice event";
-      var location = "Home";
-      var notes = "Some notes about this event.";
-      var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-      var error = function(message) { alert("Error: " + message); };
   
     $item1.hammer()
         .on('click' , function(e){
@@ -31,6 +22,7 @@
 
     $page.hammer()
         .on('swiperight' , function(e){
+            e.gesture.preventDefault();
             if(sidebar){
                 return true;    
             }
@@ -38,6 +30,7 @@
             sidebar = 1;
         })
         .on('swipeleft' , function(e){
+            e.gesture.preventDefault();
             if(!sidebar){
                 return true;
             }
@@ -45,16 +38,17 @@
             sidebar = 0;
         })
         .on('drag' , function(e){
-            if(e.gesture.deltaX > 550){
-                 console.log("0");
+             console.log(e.gesture.deltaX);
+            if(e.gesture.deltaX > 550 || e.gesture.deltaX <-550){
+                 console.log("STOP");
                 return false;
             }
             if(e.gesture.direction == 'right' && !sidebar){
-                 console.log("1");
+                e.gesture.preventDefault();
                 $page.animate({translateX: e.gesture.deltaX +"px"}, 0);
             }
             if(e.gesture.direction == 'left' && sidebar){
-                 console.log("2");
+                e.gesture.preventDefault();
                 $page.animate({translateX: (550 + e.gesture.deltaX) +"px"}, 0);
             }
         })
