@@ -21,7 +21,7 @@
     $item1.hammer()
         .on('click' , function(e){
             console.log('click item 1');
-            var ref =  window.open('www.google.fr', '_blank', 'location=yes');
+            var ref =  window.open('http://www.google.fr', '_blank', 'location=yes');
         });
 
     $item2.hammer()
