@@ -4,17 +4,25 @@
     var $nav = $('#nav');
     var sidebar = 0;
     var $item1 = $('#item1');
-
+     var $item2 = $('#item1');
 
     $item1.hammer()
         .on('click' , function(e){
-            console.log('click item');
+            console.log('click item 1');
             var ref =  window.open('pdf/test.pdf', '_blank', 'location=yes');
             ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
             ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
             ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
             ref.addEventListener('exit', function(event) { alert(event.type); });  
         });
+
+
+
+    $item2.hammer()
+        .on('click' , function(e){
+            console.log('click item 2');
+            navigator.camera.getPicture():
+        });       
 
     $page.hammer()
         .on('swiperight' , function(e){
