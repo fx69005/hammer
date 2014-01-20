@@ -21,7 +21,7 @@
 
    
 
-
+/*
     $item1.hammer()
         .on('click' , function(e){
             console.log('click item 1');
@@ -32,11 +32,12 @@
             ref.addEventListener('exit', function(event) { alert(event.type); });  
         });
 
-
+*/
 
     $item2.hammer()
         .on('click' , function(e){
-             window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+            console.log('click item 2');
+
         });       
 
     $page.hammer()
