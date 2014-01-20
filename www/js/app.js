@@ -5,7 +5,7 @@
     var sidebar = 0;
     var $item1 = $('#item1');
     var $item2 = $('#item2');
-
+    var $body = $('body');
 
 
     // prep some variables
@@ -17,12 +17,13 @@
       var success = function(message) { alert("Success: " + JSON.stringify(message)); };
       var error = function(message) { alert("Error: " + message); };
 
+    $body{}
+
   
     $item1.hammer()
         .on('click' , function(e){
             console.log('click item 1');
             window.open('../www/pdf/test.pdf', '_blank', 'location=yes');
-            //window.plugins.childBrowser.showWebPage('../pdf/test.pdf');
         });
 
     $item2.hammer()
