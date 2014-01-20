@@ -10,6 +10,7 @@
     <preference name="phonegap-version" value="3.1.0" />
     <feature name="http://api.phonegap.com/1.0/device" />
     
+    <gap:plugin name="com.phonegap.plugins.childbrowser" />
     <gap:plugin name="nl.x-services.plugins.calendar" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.core.camera" />
